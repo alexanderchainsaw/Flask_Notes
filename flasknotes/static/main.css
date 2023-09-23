@@ -1,0 +1,99 @@
+@import 'https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap';
+
+
+:root[data-theme="light"] {
+  --bg-color: #fff;
+  --text-color: #000;
+  --header-color: #e8e8e8;
+  --hover-text-color: #4f4d4d;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #333;
+  --text-color: #fff;
+  --header-color: #242323;
+  --hover-text-color: #c9c9c9;
+}
+
+
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inclusive Sans', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.site-header .navbar-nav .nav-link {
+  color: var(--text-color);
+
+
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: var(--hover-text-color);
+}
+
+.navbar-brand {
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.navbar-brand:hover {
+  color: var(--hover-text-color);
+}
+
+
+
+.dark-mode {
+}
+
+
+.moon {
+  display: block;
+}
+
+.sun {
+  display: none;
+}
+
+.dark-mode .moon {
+  display: none;
+}
+
+.dark-mode .sun {
+  display: block;
+}
+
+
+
+.note-title {
+  color: var(--text-color);
+}
+
+a.note-title:hover {
+  color: var(--hover-text-color);
+  text-decoration: none;
+}
+
+.note-content {
+  white-space: pre-line;
+
+}
+
+.note-container {
+ width: 300px;
+ height: 300px;
+ overflow: hidden;
+ background:red;
+ display: inline-block;
+ border: 1px solid black;
+ border-radius: 30px;
+}
+
