@@ -1,18 +1,37 @@
 @import 'https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap';
 
 
-:root[data-theme="light"] {
-  --bg-color: #fff;
-  --text-color: #000;
+:root {
+  --bg-color: #FFFFFF;
+  --note-color: #FEFEFE;
+  --border-color: #37352F;
+  --text-color: #37352F;
   --header-color: #e8e8e8;
   --hover-text-color: #4f4d4d;
+  --open-btn-color: #2d45fa;
+  --delete-btn-color: #FF0000;
+}
+
+:root[data-theme="light"] {
+  --bg-color: #FFFFFF;
+  --note-color: #FEFEFE;
+  --border-color: #37352F;
+  --text-color: #37352F;
+  --header-color: #e8e8e8;
+  --hover-text-color: #4f4d4d;
+  --open-btn-color: #2d45fa;
+  --delete-btn-color: #FF0000;
 }
 
 :root[data-theme="dark"] {
-  --bg-color: #333;
-  --text-color: #fff;
+  --bg-color: #191919;
+  --note-color: #262626;
+  --border-color: #262626;
+  --text-color: #D6D6D6;
   --header-color: #242323;
   --hover-text-color: #c9c9c9;
+  --open-btn-color: #5562bd;
+  --delete-btn-color: #a82c2c;
 }
 
 
@@ -95,5 +114,10 @@ a.note-title:hover {
  display: inline-block;
  border: 1px solid black;
  border-radius: 30px;
+}
+
+
+.card {
+ color: black;
 }
 
