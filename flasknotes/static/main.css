@@ -3,6 +3,7 @@
 
 :root {
   --bg-color: #FFFFFF;
+  --navbar-color: #edeae4;
   --note-color: #FEFEFE;
   --border-color: #37352F;
   --text-color: #37352F;
@@ -10,10 +11,12 @@
   --hover-text-color: #4f4d4d;
   --open-btn-color: #2d45fa;
   --delete-btn-color: #FF0000;
+  --navbar-image: background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 :root[data-theme="light"] {
   --bg-color: #FFFFFF;
+  --navbar-color: #edeae4;
   --note-color: #FEFEFE;
   --border-color: #37352F;
   --text-color: #37352F;
@@ -25,6 +28,7 @@
 
 :root[data-theme="dark"] {
   --bg-color: #191919;
+  --navbar-color: #333333;
   --note-color: #262626;
   --border-color: #262626;
   --text-color: #D6D6D6;
@@ -43,8 +47,9 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
+
 
 }
 
@@ -121,3 +126,35 @@ a.note-title:hover {
  color: black;
 }
 
+/* Keyword value */
+grid-template-rows: none;
+
+/* <track-list> values */
+grid-template-rows: 100px 1fr;
+grid-template-rows: [linename] 100px;
+grid-template-rows: [linename1] 100px [linename2 linename3];
+grid-template-rows: minmax(100px, 1fr);
+grid-template-rows: fit-content(40%);
+grid-template-rows: repeat(3, 200px);
+grid-template-rows: subgrid;
+grid-template-rows: masonry;
+
+/* <auto-track-list> values */
+grid-template-rows: 200px repeat(auto-fill, 100px) 300px;
+grid-template-rows:
+  minmax(100px, max-content)
+  repeat(auto-fill, 200px) 20%;
+grid-template-rows:
+  [linename1] 100px [linename2]
+  repeat(auto-fit, [linename3 linename4] 300px)
+  100px;
+grid-template-rows:
+  [linename1 linename2] 100px
+  repeat(auto-fit, [linename1] 300px) [linename3];
+
+/* Global values */
+grid-template-rows: inherit;
+grid-template-rows: initial;
+grid-template-rows: revert;
+grid-template-rows: revert-layer;
+grid-template-rows: unset;

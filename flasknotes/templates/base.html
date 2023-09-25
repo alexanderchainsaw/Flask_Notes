@@ -13,15 +13,16 @@
     <title>Flask Notes</title>
 
 
-
 </head>
 <body>
 <header class="site-header">
-    <nav class="navbar navbar-expand-md fixed-top">
+    <nav class="navbar navbar-expand-md fixed-top navbar-light bg-lignt" style="background-color: var(--navbar-color);">
+
         <div class="container">
-            <a class="navbar-brand mr-4" href="/">Flask Notes</a>
+            <a class="navbar-brand mr-4" href="/" style="font-size: 30px; color: var(--text-color);">Flask Notes</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
-                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation"
+                    style="background-image: var(--navbar-image);">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
@@ -48,49 +49,53 @@
                 </div>
             </div>
         </div>
+
     </nav>
 </header>
-<main role="main" class="container" style="padding: 10px;">
-    <div class="card" style="
-      width: 18rem;
-      border: 1px solid var(--border-color);
-      background-color: var(--note-color);
-      padding: 10px;
-        ">
-    <div class="card-body"
-       style="
-       background-color: var(--note-color);
-       color: var(--text-color);
-       ">
-    <h5 class="card-title">Note Title</h5>
-    <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link" style="color: var(--open-btn-color);">Open</a>
-    <a href="#" class="card-link" style="color: var(--delete-btn-color);">Delete</a>
-  </div>
-    </div>
-</main>
 
-<main role="main" class="container" style="padding: 10px;">
-    <div class="card" style="
-      width: 18rem;
-      border: 1px solid var(--border-color);
-      background-color: var(--note-color);
-      padding: 10px;
-        ">
-    <div class="card-body"
-       style="
-       background-color: var(--note-color);
-       color: var(--text-color);
-       ">
-    <h5 class="card-title">Note Title</h5>
-    <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="card-link" style="color: var(--open-btn-color);">Open</a>
-    <a href="#" class="card-link" style="color: var(--delete-btn-color);">Delete</a>
+<section>
+
+<div class="card" style="margin-top: 100px; background-color: var(--note-color);
+           color: var(--text-color);">
+
+  <div class="card-body">
+    <h5 class="card-title">Your Notes</h5>
+    <p class="card-text">Your notes will be displayed on this page. Create new note by pressing the button below and filling out the form</p>
+
+    <a href="#" class="btn btn-primary">Create New Note</a>
   </div>
+</div>
+<main role="main" style=" height: auto;">
+
+
+
+
+
+    <div class="card" style="
+
+          border: 1px solid var(--border-color);
+          background-color: var(--note-color);
+          padding: 10px;
+            ">
+        <div class="card-body"
+             style="
+           background-color: var(--note-color);
+           color: var(--text-color);
+           ">
+            <h5 class="card-title">Note Title</h5>
+            <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link" style="color: var(--open-btn-color);">Open</a>
+            <a href="#" class="card-link" style="color: var(--delete-btn-color);">Delete</a>
+        </div>
     </div>
+
+
+
+
+
 </main>
+</section>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -121,6 +126,8 @@ toggleThemeBtn.addEventListener('click', function() {
 }
 const btn = document.querySelector('.btn')
 btn.addEventListener('click', myfunction);
+
+
 </script>
 </body>
 </html>
