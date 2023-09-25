@@ -4,4 +4,4 @@ view = Blueprint('main_routes', __name__)
 
 @view.route('/')
 def home():
-    return render_template('base.html')
+    return render_template('notes.html')

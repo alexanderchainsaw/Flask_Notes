@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+
+<div class="card" style="margin-top: 100px; background-color: var(--note-color);
+           color: var(--text-color);">
+
+  <div class="card-body">
+    <h5 class="card-title">Your Notes</h5>
+    <p class="card-text">Your notes will be displayed on this page. Create new note by pressing the button below and filling out the form</p>
+
+    <a href="#" class="btn btn-primary">Create New Note</a>
+  </div>
+</div>
+<main role="main" style=" height: auto;">
+
+
+    <div class="card" style="
+
+          border: 1px solid var(--border-color);
+          background-color: var(--note-color);
+          padding: 10px;
+            ">
+        <div class="card-body"
+             style="
+           background-color: var(--note-color);
+           color: var(--text-color);
+           ">
+            <h5 class="card-title">Note Title</h5>
+            <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link" style="color: var(--open-btn-color);">Open</a>
+            <a href="#" class="card-link" style="color: var(--delete-btn-color);">Delete</a>
+        </div>
+    </div>
+
+</main>
+</section>
+
+{% endblock %}
