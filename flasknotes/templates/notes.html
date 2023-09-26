@@ -7,21 +7,25 @@
 
 
 
-<div class="card" style="margin-top: 100px; background-color: var(--note-color);
-           color: var(--text-color);">
-
+<div class="card" style="margin-top: 100px; background-color: var(--bg-color);
+           color: var(--text-color); border: none;">
+<div class="text-center">
   <div class="card-body">
-    <h5 class="card-title">Your Notes</h5>
+    <h4 class="card-title">Your Notes (12)</h4>
+
     <p class="card-text">Your notes will be displayed on this page. Create new note by pressing the button below and filling out the form</p>
 
-<div class="text-center">
+
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   New Note
 </button>
-  </div>
+  </div> </div>
 
 <!-- Modal -->
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
@@ -32,24 +36,46 @@
 
 
               <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label">Note Title</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1">
+                  {{ form.title.label(class="form-control-label") }}
+
+                    {% if form.title.errors %}
+                        {{ form.title(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.title(class="form-control form-control-lg") }}
+                    {% endif %}
                 </div>
                 <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">Note Content</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    {{ form.content.label(class="form-control-label") }}
+
+                    {% if form.content.errors %}
+                        {{ form.content(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.content.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.content(class="form-control form-control-lg", rows="5") }}
+                    {% endif %}
                 </div>
+
 
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Create Note</button>
+        <button  class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="" class="btn btn-primary">Create Note</button>
+
       </div>
     </div>
   </div>
 </div>
-
+</form>
 
 
 

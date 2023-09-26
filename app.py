@@ -1,6 +1,4 @@
-from flasknotes import init_app
-
-app = init_app()
+from flasknotes import app
 
 if __name__ == '__main__':
     app.run(debug=True)
