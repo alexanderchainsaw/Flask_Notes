@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- Vertically centered scrollable modal -->
 
 <section>
+
+
 
 <div class="card" style="margin-top: 100px; background-color: var(--note-color);
            color: var(--text-color);">
@@ -11,7 +14,56 @@
     <h5 class="card-title">Your Notes</h5>
     <p class="card-text">Your notes will be displayed on this page. Create new note by pressing the button below and filling out the form</p>
 
-    <a href="#" class="btn btn-primary">Create New Note</a>
+<div class="text-center">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  New Note
+</button>
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">New Note</h5>
+      </div>
+      <div class="modal-body">
+
+
+              <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Note Title</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Note Content</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Create Note</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 </div>
 <main role="main" style=" height: auto;">
