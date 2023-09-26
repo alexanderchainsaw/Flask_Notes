@@ -12,6 +12,7 @@
   --open-btn-color: #2d45fa;
   --delete-btn-color: #FF0000;
   --navbar-image: background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  --modal-border: #dcdfe3;
 }
 
 :root[data-theme="light"] {
@@ -24,6 +25,7 @@
   --hover-text-color: #4f4d4d;
   --open-btn-color: #2d45fa;
   --delete-btn-color: #FF0000;
+  --modal-border: #dcdfe3;
 }
 
 :root[data-theme="dark"] {
@@ -36,6 +38,7 @@
   --hover-text-color: #c9c9c9;
   --open-btn-color: #5562bd;
   --delete-btn-color: #a82c2c;
+  --modal-border: #262626;
 }
 
 
@@ -132,7 +135,30 @@ a.note-title:hover {
 input[type="text"], input[type="password"], input[type="text"]:focus, input[type="password"]:focus, textarea {
 
   background-color : var(--note-color);
-  border-color: #191919;
+  border-color: var(--modal-border);
   color: var(--text-color);
 
+}
+.form-control, .form-control:focus {
+  background-color : var(--note-color);
+  border-color: var(--modal-border);
+  color: var(--text-color);
+}
+
+.form-control-lg, .form-control-lg:focus {
+  background-color : var(--note-color);
+  border-color: var(--modal-border);
+  color: var(--text-color);
+}
+
+.modal-body {
+  background-color : var(--bg-color);
+  border-color: #191919;
+  color: var(--text-color);
+}
+
+.modal-content, .modal-header, .modal-footer {
+  background-color : var(--bg-color);
+  border-color: var(--modal-border);
+  color: var(--text-color);
 }

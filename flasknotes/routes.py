@@ -1,14 +1,19 @@
 from flask import render_template, redirect, request, url_for, flash, Blueprint
-from forms import LoginForm, RegistrationForm
-from models import User, Note
+from .forms import LoginForm, RegistrationForm, NoteForm
+from .models import User, Note
 from . import db, bcrypt
 
 view = Blueprint('main_routes', __name__)
 
 
-@view.route('/')
+@view.route('/', methods=['GET', 'POST'])
+@view.route('/notes', methods=['GET', 'POST'])
 def home():
-    return render_template('notes.html')
+    form = NoteForm()
+
+    if form.validate_on_submit():
+        pass
+    return render_template('notes.html', form=form, data=None)
 
 
 @view.route('/login')
