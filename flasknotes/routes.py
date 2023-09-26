@@ -1,6 +1,7 @@
 from flask import render_template, redirect, request, url_for, flash, Blueprint
-from .forms import LoginForm, RegistrationForm
-from .models import User, Note
+from forms import LoginForm, RegistrationForm
+from models import User, Note
+from . import db, bcrypt
 
 view = Blueprint('main_routes', __name__)
 
@@ -23,7 +24,9 @@ def login():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        
+
+
+
         new_user = User(
             username=form.username.data,
             email=form.email.data,
