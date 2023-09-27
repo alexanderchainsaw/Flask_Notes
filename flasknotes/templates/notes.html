@@ -11,7 +11,7 @@
            color: var(--text-color); border: none;">
 <div class="text-center">
   <div class="card-body">
-    <h4 class="card-title">Your Notes (12)</h4>
+    <h4 class="card-title">Your Notes ({{ count }})</h4>
 
     <p class="card-text">Your notes will be displayed on this page. Create new note by pressing the button below and filling out the form</p>
 
@@ -92,9 +92,10 @@
 
   </div>
 </div>
+
 <main role="main" style=" height: auto;">
 
-
+    {% for note in data %}
     <div class="card" style="
 
           border: 1px solid var(--border-color);
@@ -106,13 +107,24 @@
            background-color: var(--note-color);
            color: var(--text-color);
            ">
-            <h5 class="card-title">Note Title</h5>
+            <h5 class="card-title">{{ note.title }}</h5>
             <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                 {{ note.content }}</p>
             <a href="#" class="card-link" style="color: var(--open-btn-color);">Open</a>
-            <a href="#" class="card-link" style="color: var(--delete-btn-color);">Delete</a>
+
+            <form action="{{ url_for('main_routes.delete_note', note_id=note.id) }}" method="POST" style="float: right;">
+                 <input class="card-link" type="submit" value="Delete"
+                        style="
+                        color: var(--delete-btn-color);
+                        background:none;
+                        border:none;
+                        margin:0;
+                        padding:0;">
+            </form>
+
         </div>
     </div>
+    {% endfor %}
 
 </main>
 </section>
