@@ -10,10 +10,27 @@ view = Blueprint('main_routes', __name__)
 @view.route('/notes', methods=['GET', 'POST'])
 def home():
     form = NoteForm()
-
+    
     if form.validate_on_submit():
-        pass
-    return render_template('notes.html', form=form, data=None)
+        new_note = Note(
+            title=form.title.data,
+            content=form.content.data,
+            user_id=1,
+        )
+        db.session.add(new_note)
+        db.session.commit()
+
+        return redirect(url_for('main_routes.home'))
+
+    return render_template('notes.html', form=form, data=Note.query.all(), count=Note.query.count())
+
+
+@view.route('/<note_id>/delete', methods=['POST'])
+def delete_note(note_id):
+    data = Note.query.get_or_404(note_id)
+    db.session.delete(data)
+    db.session.commit()
+    return redirect(url_for('main_routes.home'))
 
 
 @view.route('/login')
