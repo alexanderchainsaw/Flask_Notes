@@ -77,19 +77,6 @@
 </div>
 </form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   </div>
 </div>
 
@@ -108,9 +95,18 @@
            color: var(--text-color);
            ">
             <h5 class="card-title">{{ note.title }}</h5>
+            {% if note.content|length > 88 %}
             <p class="card-text">
-                 {{ note.content }}</p>
-            <a href="#" class="card-link" style="color: var(--open-btn-color);">Open</a>
+                 {{ note.content[0:50] + "...(" + note.content[50:]|length|string + " symbols not shown)" }}
+            </p>
+            <a href="#" class="card-link" style="color: var(--open-btn-color);" data-bs-toggle="modal" data-bs-target="#editNote_{{ note.id }}">Open</a>
+
+                 {% else %}
+            <p class="card-text">
+                 {{ note.content }}
+            </p>
+                 {% endif %}
+
 
             <form action="{{ url_for('main_routes.delete_note', note_id=note.id) }}" method="POST" style="float: right;">
                  <input class="card-link" type="submit" value="Delete"
@@ -124,6 +120,33 @@
 
         </div>
     </div>
+
+
+<div class="modal fade" id="editNote_{{ note.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">{{ note.title }}</h5>
+      </div>
+      <div class="modal-body" style="overflow-y: auto; word-wrap: break-word;">
+                        {{ note.content }}
+      </div>
+      <div class="modal-footer">
+        <button  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
     {% endfor %}
 
 </main>
