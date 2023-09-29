@@ -11,7 +11,7 @@
            color: var(--text-color); border: none;">
 <div class="text-center">
   <div class="card-body">
-    <h4 class="card-title">Your Notes ({{ count }})</h4>
+    <h4 class="card-title">Your Notes ({{ current_user.notes|length }})</h4>
 
     <p class="card-text">Your notes will be displayed on this page. Create new note by pressing the button below and filling out the form</p>
 
@@ -82,10 +82,10 @@
 
 <main role="main" style=" height: auto;">
 
-    {% for note in data %}
+    {% for note in current_user.notes|sort(attribute='created_date', reverse=True) %}
     <div class="card" style="
 
-          border: 1px solid var(--border-color);
+          border: 1px solid var(--modal-border);
           background-color: var(--note-color);
           padding: 10px;
             ">
@@ -94,7 +94,7 @@
            background-color: var(--note-color);
            color: var(--text-color);
            ">
-            <h5 class="card-title">{{ note.title }}</h5>
+            <h5 class="card-title">{{ note.title }}  <small style="float: right; color: var(--date-color);">{{ note.created_date }}</small></h5>
             {% if note.content|length > 88 %}
             <p class="card-text">
                  {{ note.content[0:50] + "...(" + note.content[50:]|length|string + " symbols not shown)" }}
