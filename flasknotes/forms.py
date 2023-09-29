@@ -1,8 +1,9 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
-from wtforms.validators import DataRequired, Length, Email, EqualTo
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 import email_validator
 from wtforms.widgets import TextArea
+from .models import User
 
 class RegistrationForm(FlaskForm):
 
@@ -16,6 +17,13 @@ class RegistrationForm(FlaskForm):
                                      validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Create Account')
 
+    def validate_username(self, username):
+        if User.query.filter_by(username=username.data).first():
+            raise ValidationError('Username taken')
+
+    def validate_email(self, email):
+        if User.query.filter_by(email=email.data).first():
+            raise ValidationError('Account under this email already exists')
 
 class LoginForm(FlaskForm):
 
@@ -25,6 +33,14 @@ class LoginForm(FlaskForm):
                              validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
+
+    # def validate_email(self, email):
+    #     if not User.query.filter_by(email=email.data).first():
+    #         raise ValidationError('Invalid email')
+    #
+    # def validate_password(self, password):
+    #     if bcrypt.check_password_hash(password, password.data)
+    #         raise ValidationError('Invalid email')
 
 
 class NoteForm(FlaskForm):

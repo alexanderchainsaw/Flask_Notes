@@ -11,8 +11,10 @@
   --hover-text-color: #4f4d4d;
   --open-btn-color: #2d45fa;
   --delete-btn-color: #FF0000;
-  --navbar-image: background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   --modal-border: #dcdfe3;
+  --date-color: #706c6c;
+  --alert-success: #D4EDDA;
+  --alert-danger: #F8D7DA;
 }
 
 :root[data-theme="light"] {
@@ -26,6 +28,9 @@
   --open-btn-color: #2d45fa;
   --delete-btn-color: #FF0000;
   --modal-border: #dcdfe3;
+  --date-color: #706c6c;
+  --alert-success: #D4EDDA;
+  --alert-danger: #F8D7DA;
 }
 
 :root[data-theme="dark"] {
@@ -38,7 +43,10 @@
   --hover-text-color: #c9c9c9;
   --open-btn-color: #5562bd;
   --delete-btn-color: #a82c2c;
-  --modal-border: #262626;
+  --modal-border: #454141;
+  --date-color: #706c6c;
+  --alert-success: #b6cfbc;
+  --alert-danger: #bd8e91;
 }
 
 
