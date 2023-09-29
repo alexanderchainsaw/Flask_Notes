@@ -52,8 +52,16 @@ This is a simple Flask web application that allows users to register, login, cre
 - To delete a note, click on the "Delete" button next to the note you want to remove.
 - You can log out by clicking on the "Log Out" button in the navigation bar.
 ## Demo
-![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/c48e97a3-767d-453c-8c4d-64e5680f18d8)
-![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/98513946-fcc6-46ce-9c95-2137c1917145)
-![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/1c7d683e-46bb-45ad-aa19-24fec8815a7f)
+
+![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/a0633ba8-65f0-4e1b-a2b0-9f1c477bfca5)
+![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/c023dafd-2d9c-42d8-81dc-23be3d9b8df3)
+![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/f6b8ff51-5bd6-4486-83c5-3214d811fbd2)
+![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/0dbe8af0-1898-463b-900e-e8168b1d3018)
+
+![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/9b2be1a3-867d-4b4f-be36-479ecdc01273)
+![image](https://github.com/alexanderchainsaw/Flask_Notes/assets/126553365/258e2359-c2b1-4d1d-9d95-f4e66d99844a)
+
+
+
 
 
