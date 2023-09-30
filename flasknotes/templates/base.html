@@ -27,12 +27,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="#">Home</a>
-                    <a class="nav-item nav-link" href="#">About</a>
+                    <a class="nav-item nav-link" href="{{ url_for('main_routes.home') }}">Home</a>
+                    <a class="nav-item nav-link" href="">About</a>
                 </div>
                 <!-- Navbar Right Side -->
                 <div class="navbar-nav">
                     {% if current_user.is_authenticated %}
+                    <a class="nav-item nav-link" style="color: grey;">{{ current_user.username }}</a>
                     <a class="nav-item nav-link" href="{{ url_for('main_routes.logout') }}">Log Out</a>
                     {% else %}
                     <a class="nav-item nav-link" href="{{ url_for('main_routes.login') }}">Log In</a>

@@ -5,6 +5,7 @@ import email_validator
 from wtforms.widgets import TextArea
 from .models import User
 
+
 class RegistrationForm(FlaskForm):
 
     username = StringField('Username',
@@ -24,6 +25,7 @@ class RegistrationForm(FlaskForm):
     def validate_email(self, email):
         if User.query.filter_by(email=email.data).first():
             raise ValidationError('Account under this email already exists')
+
 
 class LoginForm(FlaskForm):
 
