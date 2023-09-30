@@ -19,13 +19,13 @@ This is a simple Flask web application that allows users to register, login, cre
 3. Create a virtual environment:
 
    ```shell
-   python3 -m venv venv
+   python3 -m venv *name of the directory*
    ```
 
 4. Activate the virtual environment:
 
    ```shell
-   source venv/bin/activate
+   *name of the directory*/Scripts/activate.bat
    ```
 
 5. Install the required dependencies:
