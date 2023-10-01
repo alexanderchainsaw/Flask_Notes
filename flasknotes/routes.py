@@ -9,6 +9,7 @@ view = Blueprint('main_routes', __name__)
 
 @view.route('/', methods=['GET', 'POST'])
 @view.route('/notes', methods=['GET', 'POST'])
+@view.route('/home', methods=['GET', 'POST'])
 def home():
     if not current_user.is_authenticated:
         return redirect(url_for('main_routes.login'))
